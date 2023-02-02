@@ -50,7 +50,7 @@
                     <div class="search-box">
                         <ion-icon name="search-outline" class="search-icon"></ion-icon>
                         <input type="text" id="input-search" class="search-box__input" placeholder="Search">
-                        
+
                         <ul class="data-list">
                             <li class="data-item">
                                 
@@ -166,6 +166,9 @@
                     </tr>
                 </table>
             </div>
+            <div id="toast">
+
+            </div>
         </div>
         <!-- FOOTER -->
         <div class="footer">
@@ -173,32 +176,11 @@
         </div>
     </div>
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/toast.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-        /* const btnAction = document.querySelectorAll('.btn-action');
-        for(let i = 0; i< btnAction.length; i++) {
-            btnAction[i].onclick = function() {
-                var actionBox = document.querySelector('.action-box');
-                if(actionBox.style.display === 'none') {
-                   actionBox.style.display = 'block';
-                }else {
-                    actionBox.style.display = 'none';
-                }
-            }
-        } */
-        function click() {
-            const btnAction = document.querySelectorAll('.btn-action');
-            for(let i = 0; i< btnAction.length; i++) {
-                var actionBox = document.querySelector('.action-box');
-                if(actionBox.style.display === 'none') {
-                   actionBox.style.display = 'block';
-                }else {
-                    actionBox.style.display = 'none';
-                }
-            
-            }
-        }
+        
     </script>
 </body>
 </html>

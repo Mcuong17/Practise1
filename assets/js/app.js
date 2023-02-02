@@ -188,9 +188,13 @@ const handleCreatePost = function () {
       title: postTitle,
       body: postBody,
     };
-    createPost(formData, function () {
-      getData(renderTableData);
-    });
+    if (postBody == "" || postUserID == "" || postTitle == "") {
+      showErrorToast();
+    } else {
+      createPost(formData, function () {
+        getData(renderTableData);
+      });
+    }
   };
 };
 
@@ -211,6 +215,7 @@ const hadleDeletePost = function (id) {
       var coursesItems = document.querySelector(".list-row-" + id);
       if (coursesItems) {
         coursesItems.remove();
+        showSuccessToast();
       }
     });
 };
@@ -322,12 +327,12 @@ const searchMenu = function () {
       console.log(a);
       if ((search = "")) {
         a.style.display = "block";
-        listDataItem.innerHTML += `<p>${a.innerHTML}</p>`;
+        listDataItem.innerHTML += `<a href="" class="link-data">${a.innerHTML}</a>`;
       } else if (found == -1) {
         //a.style.display = "none";
         clear();
       } else {
-        //listDataItem.innerHTML += `<a>${a.innerHTML}</a>`;
+        listDataItem.innerHTML += `<a href="" class="link-data">${a.innerHTML}</a>`;
       }
     });
   });
@@ -335,4 +340,6 @@ const searchMenu = function () {
     document.querySelector(".data-list").value = null;
   }
 };
+
+const checkInput = function () {};
 start();
