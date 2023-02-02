@@ -289,6 +289,7 @@ const clearInput = function () {
     document.querySelector('input[name = "user-ID"]').value = null;
     document.querySelector('input[name = "title"]').value = null;
     document.querySelector('input[name = "body"]').value = null;
+    showSuccessToast();
   };
 };
 
