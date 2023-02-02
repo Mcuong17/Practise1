@@ -353,17 +353,6 @@ header-notification__link {
   line-height: 30px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 200px auto;
-  width: 100vw;
-}
-
 #toast {
   position: fixed;
   top: 32px;
