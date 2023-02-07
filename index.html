@@ -6,181 +6,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Dev FE</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/js/all.min.js">
+    <link rel="stylesheet" href="./assets/css/responesive.css">
+    <link rel="stylesheet" href="./assets/jqm/footable-standalone.latest/css/footable.standalone.css">
+    <link rel="stylesheet" href="./assets/jqm/footable-standalone.latest/css/footable.standalone.min.css">
+    <script src="./assets/jqm/jquery.mobile-1.4.5/jquery-1.11.3.min.js"></script>
 </head>
 <body>
     <div class="main">
-        <!-- HEADER -->
-        <div class="header">
-            <div class="header-logo">
-                <a href="#" class="header-logo__link">
-                    <img src="./assets/image/logo.png" class="logo-img">
-                </a>
-            </div>
-            <div class="header-search">
-                <div class="search-box">
-                    <ion-icon name="search-outline" class="search-icon"></ion-icon>
-                    <input type="text" class="search-box__input" placeholder="Search" onkeyup="searchItems()">
-                </div>
-            </div>
-            <div class="header-right">
-                <div class="header-avatar">
-                    <a href="#" class="header-avatar__link">
-                        <ion-icon name="person-circle-outline" class="header-avatar__icon"></ion-icon>
-                    </a>
-                </div>
-                <div class="header-notification">
-                    <a href="#" class="header-notification__link">
-                        <ion-icon name="notifications-outline" class="header-notification__icon"></ion-icon>
-                    </a>
-                </div>
-                <div class="header-user">
-                    <h2 class="header-user__username" >Quang Hung Nguyen</h2>
-                    <p class="header-user__desc">Last Login 1/32/2023: 00:00:00</p>
-                </div>
-                <div class="header-option">
-                    <ion-icon name="caret-down-outline"></ion-icon>
-                </div>
-            </div>
-        </div>
-        <!-- BODY -->
-        <div class="container">
+        <div class="side-bar-left">
             <!-- MENU LEFT -->
             <div class="menu-left">
+                <div class="header-logo">
+                    <a href="#" class="header-logo__link">
+                        <img src="./assets/image/logo.png" class="logo-img">
+                    </a>
+                </div>
                 <div class="menu-left__search">
-                    <div class="search-box">
+                    <div class="search-menu-box">
                         <ion-icon name="search-outline" class="search-icon"></ion-icon>
                         <input type="text" id="input-search" class="search-box__input" placeholder="Search">
 
-                        <ul class="data-list">
+                        <!-- <ul class="data-list">
                             <li class="data-item">
                                 
                             </li>
-                        </ul>
+                        </ul> -->
+                        <div class="data-list"></div>
                     </div>
                 </div>
-                <!-- <div class="menu-left__option">
-                    <ul class="menu-left__list">
-                        <li class="menu-left__item">
-                            <div class="menu-left__item-box">
-                                <div class="menu-left__item-logo">
-                                    <ion-icon name="aperture-outline" class="menu-left__item-logo-icon"></ion-icon>
-                                </div>
-                                <div class="menu-left__item-text">
-                                    <a href="" class="menu-left__item-link">
-                                        Corporate
-                                     </a>
-                                </div>
-                                <div class="menu-left__item-option">
-                                    <nav class="nav-menu-icon">
-                                        <ion-icon name="caret-back-outline" class="menu-left__item-option-icon"></ion-icon>
-                                    </nav>
-                                    
-                                        <div class="menu-children">
-                                            <ul class="menu-children-list">
-                                                <li class="menu-children-item">
-                                                    <a href="#" class="menu-children-link">
-                                                        Corporate1
-                                                    </a>
-                                                </li>
-                                                <li class="menu-children-item">
-                                                    <a href="#" class="menu-children-link">
-                                                        Corporate2
-                                                    </a>
-                                                </li>
-                                                <li class="menu-children-item">
-                                                    <a href="#" class="menu-children-link">
-                                                        Corporate3
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                </div>
-                            </div>
-                        </li>
-                        
-                    </ul>
-                </div> -->
-            </div>
-            <!-- CONTENT -->
-            <div class="content">
-                <div class="title">
-                    <h2 class="content-title">BO Fee Customer List</h2>
-                </div>
-                <!-- group btn top -->
-                <div class="group-btn">
-                    <div class="btn-block" >
-                        <button class="btn-fill btn btn-add" >
-                            <ion-icon class="btn-icon" name="add-outline"></ion-icon>
-                            Add New
-                        </button>
-                    </div>
-                    <div class="btn-block" >
-                        <button class="text-black btn btn-delete">
-                            <ion-icon class="btn-icon" name="trash-outline"></ion-icon>
-                            Delete
-                        </button>
-                    </div>
-                </div>
-                <!-- Form group -->
-                <div class="form-group">
+                
+                <div class="log-out">
                     <div>
-                        <label for="" class="label-input">ID</label>
-                        <input type="text" class=" input-text " placeholder="ID" name="ID">
+                        <i class="fa-solid fa-right-from-bracket log-out__icon"></i>
                     </div>
-                    <div>
-                        <label for="" class="label-input">User ID</label>
-                        <input type="text" class="input-userid input-text " placeholder="User ID" name="user-ID">
-                    </div>
-                    <div>
-                        <label for="" class="label-input">Title</label>
-                        <input type="text" class="input-text " placeholder="Title" name="title">
-                    </div>
-                    <div>
-                        <label for="" class="label-input">Body</label>
-                        <input type="text" class="input-text " placeholder="Body" name="body">
-                    </div>
+                    <a href="#" class="log-out__text">
+                        Log Out
+                    </a>
                 </div>
-                <!-- Group btn bottom -->
-                <div class="group-btn">
-                    <div class="btn-block" >
-                        <button class="btn btn-fill btn-search btn-nonactive">
-                            <ion-icon class="btn-icon" name="search-outline"></ion-icon>
-                            Search
-                        </button>
-                    </div>
-                    <div class="btn-block" >
-                        <button class=" btn text-black btn-clear">
-                            <ion-icon class="btn-icon" name="alert-circle-outline"></ion-icon>
-                            Clear
-                        </button>
-                    </div>
-                </div>
-                <!-- Table Data -->
-                <table style="width: 100%;" class="table-data reset_table" id="table-data">
-                    <tr>
-                            <th>ID</th>
-                            <th>User ID</th>
-                            <th>Title</th>
-                            <th>Body</th>
-                            <th>Action</th>
-                    </tr>
-                </table>
-            </div>
-            <div id="toast">
-
             </div>
         </div>
-        <!-- FOOTER -->
-        <div class="footer">
-            <!-- <p>© Copyright 2021 - Shwebank. All Rights Reserved.</p> -->
+        <!-- CONTENT RIGHT -->
+        <div class="content-right">
+            <!-- HEADER -->
+            <div class="header">
+                <div class="btn-show">
+                    <i class="fa-solid fa-bars btn-show__icon" ></i>
+                </div>
+                <div class="header-search">
+                    <div class="search-box">
+                        <ion-icon name="search-outline" class="search-icon"></ion-icon>
+                        <input type="text" class="search-box__input" placeholder="Search" onkeyup="searchItems()">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-avatar">
+                        <a href="#" class="header-avatar__link">
+                            <i class="fa-solid fa-user  header-avatar__icon"></i>
+                        </a>
+                    </div>
+                    <div class="header-notification">
+                        <a href="#" class="header-notification__link">
+                            <i class="fa-solid fa-bell header-notification__icon"></i>
+                        </a>
+                    </div>
+                    <div class="header-user">
+                        <h2 class="header-user__username" >Quang Hung Nguyen</h2>
+                        <p class="header-user__desc">Last Login 1/32/2023: 00:00:00</p>
+                    </div>
+                    <div class="header-option">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- BODY -->
+            <div class="container">
+                
+                <!-- CONTENT -->
+                <div class="content">
+                    <div class="title">
+                        <h2 class="content-title">BO Fee Customer List</h2>
+                    </div>
+                    <!-- group btn top -->
+                    <div class="group-btn">
+                        <div class="btn-block" >
+                            <button class="btn-fill btn btn-add" >
+                                <ion-icon class="btn-icon" name="add-outline"></ion-icon>
+                                Add New
+                            </button>
+                        </div>
+                        <div class="btn-block" >
+                            <button class="text-black btn btn-delete">
+                                <ion-icon class="btn-icon" name="trash-outline"></ion-icon>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Form group -->
+                    <div class="form-group">
+                        <div class="label-group">
+                            <label for="" class="label-input">ID</label>
+                            <input type="text" class=" input-text " placeholder="ID" name="ID">
+                        </div>
+                        <div class="label-group">
+                            <label for="" class="label-input">User ID</label>
+                            <input type="text" class="input-userid input-text " placeholder="User ID" name="user-ID">
+                        </div>
+                        <div class="label-group">
+                            <label for="" class="label-input">Title</label>
+                            <input type="text" class="input-text " placeholder="Title" name="title">
+                        </div>
+                        <div class="label-group">
+                            <label for="" class="label-input">Body</label>
+                            <input type="text" class="input-text " placeholder="Body" name="body">
+                        </div>
+                    </div>
+                    <!-- Group btn bottom -->
+                    <div class="group-btn">
+                        <div class="btn-block" >
+                            <button class="btn btn-fill btn-search btn-nonactive">
+                                <ion-icon class="btn-icon" name="search-outline"></ion-icon>
+                                Search
+                            </button>
+                        </div>
+                        <div class="btn-block" >
+                            <button class=" btn text-black btn-clear">
+                                <ion-icon class="btn-icon" name="alert-circle-outline"></ion-icon>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Table Data -->
+                    <table class="table-data reset_table" id="table"  data-mode="reflow">
+                        <thead>
+                            <tr>    
+                                    <th></th>
+                                    <th><input type="checkbox" class="checkboxAll"  onclick="toggle(this)"> </th>
+                                    <th>ID</th>
+                                    <th data-breakpoints="xs sm">User ID</th>
+                                    <th data-breakpoints="xs sm">Title</th>
+                                    <th data-breakpoints="xs sm">Body</th>
+                                    <th >Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body" >
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="toast">
+ 
+                </div>
+                
+            </div>
+            <!-- FOOTER -->
+            <!-- <div class="footer">
+                <p>© Copyright 2021 - Shwebank. All Rights Reserved.</p>
+            </div> -->
         </div>
     </div>
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/toast.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./assets/js/responesive.js" ></script>  
+    <script src="./assets/jqm/footable-standalone.latest/js/footable.js" ></script>
+    <script src="./assets/jqm/footable-standalone.latest/js/footable.min.js" ></script>
     <script>
-        
-    </script>
+        let btnToggle = document.querySelector('.btn-show')
+        let sideLeft = document.querySelector('.side-bar-left')
+        let contentRight = document.querySelector('.content-right')
+        let main = document.querySelector('.main')
+
+        btnToggle.onclick = function() {
+            if(sideLeft.style.display == 'none') {
+                sideLeft.style.display = 'block';
+                main.style.display = 'grid'
+                sideLeft.style.opacity = 1
+            } else {
+                sideLeft.style.display = 'none'       
+                main.style.display = 'block'
+                sideLeft.style.opacity = 0;
+            }
+        }
+        jQuery(function($){
+            $('#table').footable();
+        });
+    </script> 
 </body>
 </html>

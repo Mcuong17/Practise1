@@ -1,0 +1,13 @@
+.main {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.side-bar {
+  color: aqua;
+}
+.content {
+  color: rebeccapurple;
+}
+.footer {
+  color: brown;
+}
