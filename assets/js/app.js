@@ -8,6 +8,7 @@ function start() {
   searchMenu();
   handleCheckbox();
   handleDeleteCheckbox();
+  toggleAction();
 }
 const menuLeft = document.querySelector(".menu-left");
 var api = "https://jsonplaceholder.typicode.com/posts";
@@ -198,7 +199,7 @@ const renderTableData = function (datas) {
             <td class="post-title" >${data.title}</td>
             <td class="post-body" >${data.body}</td>
             <td class="table-last-data">
-            <div class="action btn-action">
+            <div class="action">
               <div class="div-icon">
               <i class="fa-solid fa-ellipsis"></i>
               </div>
@@ -419,14 +420,18 @@ const searchMenu = function () {
         if (text.toLowerCase().includes(filter.toLowerCase())) {
           /* item.style.display = "";  khi rỗng vẫn là true ? */
           /*  console.log(text.toLowerCase().includes(filter.toLowerCase())); */
-          console.log(item.textContent.trim());
-          dataListSearch.innerText = item.textContent.trim();
-        } /* else {
-          console.log("No result");
-          dataListSearch.innerText = "No result";
-        } */
+          /* console.log(item.textContent.trim()); */
+          /* dataListSearch.innerText = item.textContent.trim(); */
+          dataListSearch.innerHTML = `<a>${item.textContent.trim()}</a>`;
+          dataListSearch.style.display = "block";
+          dataListSearch.style.padding = 10 + "px";
+        } else {
+          /* dataListSearch.style.display = "block";
+          dataListSearch.innerText = "No result"; */
+        }
       } else {
-        dataListSearch.innerText = "No result";
+        /* dataListSearch.innerText = "No result"; */
+        dataListSearch.style.display = "none";
       }
     });
   }
@@ -475,17 +480,23 @@ const touchmove = function (event) {
   movingY = event.touches[0].clientY;
 };
 const touchend = function (id) {
-  let actionBoxs = document.querySelector(".action-box");
+  let actionBoxs = document.querySelectorAll(".action-box");
   if (startingX + 100 < movingX) {
     // event went user tough right
     console.log("right");
     row = document.querySelector(`.list-row-${id}`);
     row.style.right = 0;
+    actionBoxs.forEach((actionBox) => {
+      actionBox.style.opacity = 0;
+    });
   } else if (startingX - 100 > movingX) {
     // event went user tough left
     console.log("left");
     row = document.querySelector(`.list-row-${id}`);
     row.style.right = 30 + "%";
+    actionBoxs.forEach((actionBox) => {
+      actionBox.style.opacity = 1;
+    });
   }
   if (startingY + 100 < movingY) {
     console.log("down");
@@ -494,7 +505,13 @@ const touchend = function (id) {
   }
 };
 
-/* const handleSwipe = function(id) {
-  touchend(id)
-} */
+const toggleAction = function () {
+  let actionBoxs = document.querySelectorAll(".action-box");
+
+  actionBoxs.forEach((actionBox) => {
+    actionBox.style.display = "block";
+  });
+};
+let action = document.querySelectorAll(".action");
+console.log(action);
 start();

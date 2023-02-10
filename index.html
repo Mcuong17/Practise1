@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="width=device-width, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Dev FE</title>
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -142,7 +142,7 @@
                     <table class="table-data reset_table" id="table"  data-mode="reflow">
                         <thead>
                             <tr>    
-                                    <th></th>
+                                    <th class="header-row"></th>
                                     <th><input type="checkbox" class="checkboxAll"  onclick="toggle(this)"> </th>
                                     <th>ID</th>
                                     <th data-breakpoints="xs sm">User ID</th>
@@ -177,7 +177,6 @@
         let sideLeft = document.querySelector('.side-bar-left')
         let contentRight = document.querySelector('.content-right')
         let main = document.querySelector('.main')
-
         btnToggle.onclick = function() {
             if(sideLeft.style.display == 'none') {
                 sideLeft.style.display = 'block';
@@ -193,6 +192,7 @@
         jQuery(function($){
             $('#table').footable();
         });
+        
     </script> 
 </body>
 </html>

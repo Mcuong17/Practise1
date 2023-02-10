@@ -3,6 +3,11 @@
   .input-text {
     width: 100%;
   }
+
+  .header-row,
+  .list-first-item {
+    display: none !important;
+  }
 }
 
 /* Tablet */
