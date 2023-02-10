@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/js/all.min.js">
     <link rel="stylesheet" href="./assets/css/responesive.css">
-    <link rel="stylesheet" href="./assets/jqm/footable-standalone.latest/css/footable.standalone.css">
+    <!-- <link rel="stylesheet" href="./assets/jqm/footable-standalone.latest/css/footable.standalone.css"> -->
     <link rel="stylesheet" href="./assets/jqm/footable-standalone.latest/css/footable.standalone.min.css">
-    <script src="./assets/jqm/jquery.mobile-1.4.5/jquery-1.11.3.min.js"></script>
+    <!-- <script src="./assets/jqm/jquery.mobile-1.4.5/jquery-1.11.3.min.js"></script> -->
+    <script src="./assets/js/jquery-3.6.3.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -126,7 +127,7 @@
                     <div class="group-btn">
                         <div class="btn-block" >
                             <button class="btn btn-fill btn-search btn-nonactive">
-                                <ion-icon class="btn-icon" name="search-outline"></ion-icon>
+                                <i class="fa-solid fa-magnifying-glass btn-icon"></i>
                                 Search
                             </button>
                         </div>
@@ -169,7 +170,7 @@
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/toast.js"></script>
     <script src="./assets/js/responesive.js" ></script>  
-    <script src="./assets/jqm/footable-standalone.latest/js/footable.js" ></script>
+    <!-- <script src="./assets/jqm/footable-standalone.latest/js/footable.js" ></script> -->
     <script src="./assets/jqm/footable-standalone.latest/js/footable.min.js" ></script>
     <script>
         let btnToggle = document.querySelector('.btn-show')
@@ -188,6 +189,7 @@
                 sideLeft.style.opacity = 0;
             }
         }
+
         jQuery(function($){
             $('#table').footable();
         });

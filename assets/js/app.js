@@ -184,7 +184,7 @@ const renderTableData = function (datas) {
     return `
       
 
-      <tr class="list-row-${data.id}" data-expanded="false" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend()" >
+      <tr class="list-row-${data.id} list-row" data-expanded="false" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(${data.id})" >
         <td class="list-first-item" ></td>
         <td class="list-checkbox">
             <input type="checkbox" name="postIds[]" class="checkbox-item" value="${data.id}" >
@@ -197,20 +197,22 @@ const renderTableData = function (datas) {
             </td>
             <td class="post-title" >${data.title}</td>
             <td class="post-body" >${data.body}</td>
-            <td>
+            <td class="table-last-data">
             <div class="action btn-action">
-            <i class="fa-solid fa-ellipsis"></i>
-            <div class="action-box">
-                <div class="action-edit" onClick = "handleUpdatePost(${data.id})">
-                <i class="fa-solid fa-pen-to-square"></i>
-                    Edit
-                </div>
-                <div class="action-delete" onClick="hadleDeletePost(${data.id})" >
-                <i class="fa-solid fa-trash"></i>
-                    Delete
-                </div>
-            </div>
-            </div> 
+              <div class="div-icon">
+              <i class="fa-solid fa-ellipsis"></i>
+              </div>
+              </div> 
+              <div class="action-box">
+                  <div class="action-edit" onClick = "handleUpdatePost(${data.id})">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                      Edit
+                  </div>
+                  <div class="action-delete" onClick="hadleDeletePost(${data.id})" >
+                  <i class="fa-solid fa-trash"></i>
+                      Delete
+                  </div>
+              </div>
             </td>
     </tr>
      
@@ -472,11 +474,18 @@ const touchmove = function (event) {
   movingX = event.touches[0].clientX;
   movingY = event.touches[0].clientY;
 };
-const touchend = function () {
+const touchend = function (id) {
+  let actionBoxs = document.querySelector(".action-box");
   if (startingX + 100 < movingX) {
+    // event went user tough right
     console.log("right");
+    row = document.querySelector(`.list-row-${id}`);
+    row.style.right = 0;
   } else if (startingX - 100 > movingX) {
+    // event went user tough left
     console.log("left");
+    row = document.querySelector(`.list-row-${id}`);
+    row.style.right = 30 + "%";
   }
   if (startingY + 100 < movingY) {
     console.log("down");
@@ -484,4 +493,8 @@ const touchend = function () {
     console.log("top");
   }
 };
+
+/* const handleSwipe = function(id) {
+  touchend(id)
+} */
 start();
