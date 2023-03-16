@@ -470,6 +470,8 @@ const handleDeleteCheckbox = function () {
     }
   });
 };
+
+// Handle touch event start move end
 var startingX, startingY, movingX, movingY;
 const touchstart = function (event) {
   startingX = event.touches[0].clientX;
@@ -481,6 +483,7 @@ const touchmove = function (event) {
 };
 const touchend = function (id) {
   let actionBoxs = document.querySelectorAll(".action-box");
+  console.log(movingX);
   if (startingX + 100 < movingX) {
     // event went user tough right
     console.log("right");
@@ -512,6 +515,5 @@ const toggleAction = function () {
     actionBox.style.display = "block";
   });
 };
-let action = document.querySelectorAll(".action");
-console.log(action);
+
 start();

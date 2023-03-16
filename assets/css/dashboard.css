@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 20px;
+  font-family: sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+}
+.charts .chart {
+  width: 50%;
+}

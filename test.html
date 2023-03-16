@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 300px;
+        display: flex;
+        justify-content: space-around;
+        height: 35px;
+      }
+      .count {
+        display: flex;
+        border: 1px solid #000;
+      }
+      .count > div {
+        border: 1px solid #000;
+        width: 30px;
+        font-size: 14px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Count</p>
+      <div class="count">
+        <div class="minus">-</div>
+        <div class="number">0</div>
+        <div class="total">+</div>
+      </div>
+    </div>
+    <script>
+      let btnMinus = document.querySelector(".minus");
+      let btnTotal = document.querySelector(".total");
+      let number = +document.querySelector(".number").textContent;
+
+      if (+document.querySelector(".number").textContent >= 0) {
+        btnMinus.addEventListener("click", () => {
+          let btnMinus = +document.querySelector(".number").textContent;
+          btnMinus--;
+          document.querySelector(".number").innerHTML = btnMinus;
+        });
+        btnTotal.addEventListener("click", () => {
+          let btnTotal = +document.querySelector(".number").textContent;
+          btnTotal++;
+          document.querySelector(".number").innerHTML = btnTotal;
+        });
+      }
+      if (+document.querySelector(".number").textContent < 0) {
+        console.log("Number to alow 0");
+      }
+    </script>
+  </body>
+</html>
